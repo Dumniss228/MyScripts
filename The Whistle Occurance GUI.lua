@@ -267,9 +267,9 @@ local function C_9()
 	local function myCustomScript()
 	
 		    
-workspace.katmandu111212.Humanoid.AutomaticScalingEnabled = False
+workspace.HttpScript01.Humanoid.AutomaticScalingEnabled = False
 	
-	         workspace.katmandu111212.Humanoid.WalkSpeed = 50	
+	         workspace.HttpScript01.Humanoid.WalkSpeed = 50	
 	end
 	
 	
@@ -279,5 +279,6 @@ workspace.katmandu111212.Humanoid.AutomaticScalingEnabled = False
 	textButton.MouseButton1Click:Connect(myCustomScript)	
 end;
 task.spawn(C_9);
+
 
 return G2L["ScreenGui_1"], require;
