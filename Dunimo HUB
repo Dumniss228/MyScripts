@@ -11,6 +11,10 @@ local frame = Instance.new("Frame") -- create frame
  frame.Position = UDim2.new(0.294, 0,0.227, 0)
  frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 
+local framecorner = Instance.new("UICorner")             -- kryglaya forma
+ framecorner.Parent = frame
+ framecorner.CornerRadius = UDim.new(0, 15)
+
 local button1 = Instance.new("TextButton") -- textbutton
  button1.Parent = frame
  button1.Name = "Button1"
@@ -90,4 +94,3 @@ local sitbutton = sitscript.Parent
 sitbutton.Activated:Connect(function()                 --sit script
 	player.Humanoid.Sit = true
 end)
- 
