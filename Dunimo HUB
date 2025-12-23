@@ -38,7 +38,7 @@ local ExitButton = Instance.new("TextButton")        -- ExitButton
  ExitButton.BackgroundColor3 = Color3.fromRGB(68, 1, 1)
  ExitButton.Text = "X"
  ExitButton.TextSize = 17
- TextColor3 = Color3.fromRGB(255, 255, 255)
+ ExitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
  
 local exitscript = Instance.new("LocalScript")
  exitscript.Parent = ExitButton
@@ -68,8 +68,26 @@ local opescript = Instance.new("LocalScript")
  opescript.Name = "openscript"
  
  local openbutton = opescript.Parent
-openbutton.Activated:Connect(function()               --open script
+ openbutton.Activated:Connect(function()               --open script
 	screengui.Enabled = true
 end)
 
+local sitbutton = Instance.new("TextButton")                    -- sitbutton
+ sitbutton.Parent = frame
+ sitbutton.Name = "Sit"
+ sitbutton.Position = UDim2.new(0.02, 0,0.64, 0)
+ sitbutton.Size = UDim2.new(0, 48,0, 31) 
+ sitbutton.Text = "Sit"
+ sitbutton.TextSize = 10
+ sitbutton.BackgroundColor3 = Color3.fromRGB(0, 68, 5)
+ sitbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+  
+  local sitscript = Instance.new("LocalScript")
+ sitscript.Parent = sitbutton                          --sit script create
+ sitscript.Name = "Sitscript" 
 
+local sitbutton = sitscript.Parent
+sitbutton.Activated:Connect(function()                 --sit script
+	player.Humanoid.Sit = true
+end)
+ 
