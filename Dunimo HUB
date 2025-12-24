@@ -1,109 +1,143 @@
 local pGui = game.Players.LocalPlayer.PlayerGui
 
-local player = game.Workspace.Dunimo113
+local player = game.Workspace.Dunimo113  --here your username
 
 local screengui = Instance.new("ScreenGui") -- create screen gui
- screengui.Parent = pGui
+screengui.Parent = pGui
 
 local frame = Instance.new("Frame") -- create frame
- frame.Parent = pGui.ScreenGui
- frame.Size = UDim2.new(0, 419,0, 234)
- frame.Position = UDim2.new(0.294, 0,0.227, 0)
- frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+frame.Parent = pGui.ScreenGui
+frame.Size = UDim2.new(0, 419,0, 234)
+frame.Position = UDim2.new(0.294, 0,0.227, 0)
+frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 
 local framecorner = Instance.new("UICorner")             -- kryglaya forma
- framecorner.Parent = frame
- framecorner.CornerRadius = UDim.new(0, 10)
+framecorner.Parent = frame
+framecorner.CornerRadius = UDim.new(0, 10)
 
 local button1 = Instance.new("TextButton") -- textbutton
- button1.Parent = frame
- button1.Name = "Button1"
- button1.Position = UDim2.new(0.022, 0,0.83, 0)
- button1.Size = UDim2.new(0, 87,0, 31)                          --Button1
- button1.BackgroundColor3 = Color3.fromRGB(0, 68, 5)
- button1.TextSize = 10
- button1.TextColor3 = Color3.fromRGB(255, 255, 255)
- button1.Text = "SuperSpeed"
- local framecorner1 = Instance.new("UICorner")   
- framecorner1.Parent = button1                                 --UI
- framecorner1.CornerRadius = UDim.new(0, 10)
+button1.Parent = frame
+button1.Name = "Button1"
+button1.Position = UDim2.new(0.022, 0,0.83, 0)
+button1.Size = UDim2.new(0, 87,0, 31)                          --Button1
+button1.BackgroundColor3 = Color3.fromRGB(0, 68, 5)
+button1.TextSize = 10
+button1.TextColor3 = Color3.fromRGB(255, 255, 255)
+button1.Text = "SuperSpeed"
+local framecorner1 = Instance.new("UICorner")   
+framecorner1.Parent = button1                                 --UI
+framecorner1.CornerRadius = UDim.new(0, 10)
 
 local script1 = Instance.new("Script")
- script1.Parent = button1                     --script 1
- script1.Name = "Script1"
- 
-local button1 = script1.Parent
- button1.Activated:Connect(function()                 --command 1 (superspeed)
-	player.Humanoid.WalkSpeed = 50 -- here your username
-end)
+script1.Parent = button1                     --script 1
+script1.Name = "Script1"
 
+local button1 = script1.Parent
+button1.Activated:Connect(function()                 --command 1 (superspeed)
+	player.Humanoid.WalkSpeed = 50 
+end)
+-----------------------------------------------
 local ExitButton = Instance.new("TextButton")        -- ExitButton
- ExitButton.Parent = frame
- ExitButton.Name = "ExitButton"
- ExitButton.Position = UDim2.new(0.92, 0,0.02, 0)
- ExitButton.Size = UDim2.new(0, 28,0, 31)       
- ExitButton.BackgroundColor3 = Color3.fromRGB(68, 1, 1)
- ExitButton.Text = "X"
- ExitButton.TextSize = 17
- ExitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExitButton.Parent = frame
+ExitButton.Name = "ExitButton"
+ExitButton.Position = UDim2.new(0.92, 0,0.02, 0)
+ExitButton.Size = UDim2.new(0, 28,0, 31)       
+ExitButton.BackgroundColor3 = Color3.fromRGB(68, 1, 1)
+ExitButton.Text = "X"
+ExitButton.TextSize = 17
+ExitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 local framecorner4 = Instance.new("UICorner")   
- framecorner4.Parent = ExitButton                         --UI
- framecorner4.CornerRadius = UDim.new(0, 10)
- 
+framecorner4.Parent = ExitButton                         --UI
+framecorner4.CornerRadius = UDim.new(0, 10)
+
 local exitscript = Instance.new("LocalScript")
- exitscript.Parent = ExitButton
- exitscript.Name = "Exitscript"
- 
+exitscript.Parent = ExitButton
+exitscript.Name = "Exitscript"
+
 local ExitButton = exitscript.Parent
 ExitButton.Activated:Connect(function()                 --ExitScript
 	screengui.Enabled = false
-	end)
-
+end)
+------------------------------------------
 local screengui2 = Instance.new("ScreenGui") -- create screen gui 2
- screengui2.Parent = pGui
- screengui2.Name = "ScreenGui2"
+screengui2.Parent = pGui
+screengui2.Name = "ScreenGui2"
 
-
+-----------------------------------------------
 local openbutton = Instance.new("TextButton") 
- openbutton.Parent = screengui2
- openbutton.Text = "GUI"                                    --open button
- openbutton.Position = UDim2.new(0.85, 5,0, 0)
- openbutton.Size = UDim2.new(0, 28,0, 31)
- openbutton.BackgroundColor3 = Color3.fromRGB(0, 57, 9)
- openbutton.TextSize = 9
- openbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
- 
+openbutton.Parent = screengui2
+openbutton.Text = "GUI"                                    --open button
+openbutton.Position = UDim2.new(0.85, 5,0, 0)
+openbutton.Size = UDim2.new(0, 28,0, 31)
+openbutton.BackgroundColor3 = Color3.fromRGB(0, 57, 9)
+openbutton.TextSize = 9
+openbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+
 local framecorner2 = Instance.new("UICorner")   
- framecorner2.Parent = openbutton                      --UI
- framecorner2.CornerRadius = UDim.new(0, 10)
-  
+framecorner2.Parent = openbutton                      --UI
+framecorner2.CornerRadius = UDim.new(0, 10)
+
 local openscript = Instance.new("LocalScript")
- openscript.Parent = openbutton
- openscript.Name = "openscript"
- 
- local openbutton = openscript.Parent
- openbutton.Activated:Connect(function()               --open script
+openscript.Parent = openbutton
+openscript.Name = "openscript"
+---------------------------------------------- 
+local openbutton = openscript.Parent
+openbutton.Activated:Connect(function()               --open script
 	screengui.Enabled = true
 end)
-
+-----------------------------------------------
 local sitbutton = Instance.new("TextButton")                    -- sitbutton
- sitbutton.Parent = frame
- sitbutton.Name = "Sit"
- sitbutton.Position = UDim2.new(0.02, 0,0.64, 0)
- sitbutton.Size = UDim2.new(0, 48,0, 31) 
- sitbutton.Text = "Sit"
- sitbutton.TextSize = 10
- sitbutton.BackgroundColor3 = Color3.fromRGB(0, 68, 5)
- sitbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+sitbutton.Parent = frame
+sitbutton.Name = "Sit"
+sitbutton.Position = UDim2.new(0.02, 0,0.64, 0)
+sitbutton.Size = UDim2.new(0, 48,0, 31) 
+sitbutton.Text = "Sit"
+sitbutton.TextSize = 10
+sitbutton.BackgroundColor3 = Color3.fromRGB(0, 68, 5)
+sitbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
 local framecorner3 = Instance.new("UICorner")   
-  framecorner3.Parent = sitbutton
-  framecorner3.CornerRadius = UDim.new(0, 10)
-  
+framecorner3.Parent = sitbutton
+framecorner3.CornerRadius = UDim.new(0, 10)
+
 local sitscript = Instance.new("LocalScript")
- sitscript.Parent = sitbutton                          --sit script create
- sitscript.Name = "Sitscript" 
+sitscript.Parent = sitbutton                          --sit script create
+sitscript.Name = "Sitscript" 
 
 local sitbutton = sitscript.Parent
 sitbutton.Activated:Connect(function()                 --sit script
 	player.Humanoid.Sit = true
 end)
+-----------------------------------------------
+-----------------------------------------------
+local hipbutton = Instance.new("TextButton")
+ hipbutton.Parent = frame
+ hipbutton.Text = "HipHeight"  
+ hipbutton.Position = UDim2.new(0.02, 0,0.45, 0)
+ hipbutton.Name = "hipbutton"                                  --  hipbutton
+ hipbutton.Size = UDim2.new(0, 68,0, 31)
+ hipbutton.TextSize = 10
+ hipbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ hipbutton.BackgroundColor3 = Color3.fromRGB(0, 68, 5)
+ hipbutton.BorderSizePixel = 0
+
+ local framecorner4 = Instance.new("UICorner")   
+ framecorner4.Parent = hipbutton
+ framecorner4.CornerRadius = UDim.new(0, 10)
+
+------------------------------------------------------
+
+local hipscript = Instance.new("LocalScript")
+ hipscript.Parent = hipbutton
+ hipscript.Name = "hipscript" 
+  
+  local hipbutton = hipscript.Parent                           --hip script
+ hipbutton.Activated:Connect(function() 
+		player.Humanoid.AutomaticScalingEnabled = false
+		player.Humanoid.HipHeight = 2.5
+ end)
+
+---------------------------------------------------------
+
+
+
+
