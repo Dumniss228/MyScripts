@@ -1,0 +1,83 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local On = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Off = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.160341561, 0, 0.664485514, 0)
+Frame.Size = UDim2.new(0, 49, 0, 92)
+
+UICorner.Parent = Frame
+
+On.Name = "On"
+On.Parent = Frame
+On.BackgroundColor3 = Color3.fromRGB(10, 72, 0)
+On.BorderColor3 = Color3.fromRGB(0, 0, 0)
+On.BorderSizePixel = 0
+On.Position = UDim2.new(0.0612244904, 0, 0.0382401831, 0)
+On.Size = UDim2.new(0, 43, 0, 42)
+On.Font = Enum.Font.SourceSans
+On.Text = "ON"
+On.TextColor3 = Color3.fromRGB(255, 255, 255)
+On.TextSize = 17.000
+
+UICorner_2.Parent = On
+
+Off.Name = "Off"
+Off.Parent = Frame
+Off.BackgroundColor3 = Color3.fromRGB(84, 0, 1)
+Off.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Off.BorderSizePixel = 0
+Off.Position = UDim2.new(0.0612244904, 0, 0.494761884, 0)
+Off.Size = UDim2.new(0, 43, 0, 42)
+Off.Font = Enum.Font.SourceSans
+Off.Text = "OFF"
+Off.TextColor3 = Color3.fromRGB(255, 255, 255)
+Off.TextSize = 17.000
+
+UICorner_3.Parent = Off
+
+-- Scripts:
+
+local function YHUY_fake_script() -- On.LocalScript 
+	local script = Instance.new('LocalScript', On)
+
+	local player = game.Workspace.Dunimo113
+	
+	script.Parent.Activated:Connect(function()
+	while wait(0.001) do
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(-10, 0, 0))
+		wait(0.001)
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(10, 0, 0))
+		wait(0.001)
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(0, 0, -10))
+		wait(0.001)
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(0, 0, 10))
+	end
+	end)
+end
+coroutine.wrap(YHUY_fake_script)()
+local function JYCT_fake_script() -- Off.LocalScript 
+	local script = Instance.new('LocalScript', Off)
+
+	script.Parent.Activated:Connect(function()
+		game.Workspace.Dunimo113.Humanoid.Health = 0
+	end)
+end
+coroutine.wrap(JYCT_fake_script)()
