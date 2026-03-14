@@ -1,0 +1,205 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Up = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Down = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local activate = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local forward = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local backward = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local UICorner_6 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.69771862, 0, 0.607709765, 0)
+Frame.Size = UDim2.new(0, 55, 0, 112)
+
+Up.Name = "Up"
+Up.Parent = Frame
+Up.BackgroundColor3 = Color3.fromRGB(7, 56, 0)
+Up.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Up.BorderSizePixel = 0
+Up.Position = UDim2.new(0.113207549, 0, 0.0599999987, 0)
+Up.Size = UDim2.new(0, 43, 0, 43)
+Up.Font = Enum.Font.SourceSans
+Up.Text = "UP"
+Up.TextColor3 = Color3.fromRGB(255, 255, 255)
+Up.TextSize = 20.000
+
+UICorner.Parent = Up
+
+Down.Name = "Down"
+Down.Parent = Frame
+Down.BackgroundColor3 = Color3.fromRGB(7, 56, 0)
+Down.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Down.BorderSizePixel = 0
+Down.Position = UDim2.new(0.113208011, 0, 0.569999993, 0)
+Down.Size = UDim2.new(0, 43, 0, 43)
+Down.Font = Enum.Font.SourceSans
+Down.Text = "DOWN"
+Down.TextColor3 = Color3.fromRGB(255, 255, 255)
+Down.TextSize = 18.000
+
+UICorner_2.Parent = Down
+
+activate.Name = "activate"
+activate.Parent = Frame
+activate.BackgroundColor3 = Color3.fromRGB(53, 0, 1)
+activate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+activate.BorderSizePixel = 0
+activate.Position = UDim2.new(-1.60000002, 0, 0.75, 0)
+activate.Size = UDim2.new(0, 88, 0, 28)
+activate.Font = Enum.Font.SourceSans
+activate.Text = "Activate"
+activate.TextColor3 = Color3.fromRGB(255, 255, 255)
+activate.TextSize = 16.000
+
+UICorner_3.Parent = activate
+
+forward.Name = "forward"
+forward.Parent = Frame
+forward.BackgroundColor3 = Color3.fromRGB(0, 53, 8)
+forward.BorderColor3 = Color3.fromRGB(0, 0, 0)
+forward.BorderSizePixel = 0
+forward.Position = UDim2.new(-1.60000002, 0, 0, 0)
+forward.Size = UDim2.new(0, 88, 0, 24)
+forward.Font = Enum.Font.SourceSans
+forward.Text = "Forward"
+forward.TextColor3 = Color3.fromRGB(255, 255, 255)
+forward.TextSize = 16.000
+
+UICorner_4.Parent = forward
+
+backward.Name = "backward"
+backward.Parent = Frame
+backward.BackgroundColor3 = Color3.fromRGB(0, 53, 8)
+backward.BorderColor3 = Color3.fromRGB(0, 0, 0)
+backward.BorderSizePixel = 0
+backward.Position = UDim2.new(-1.60000002, 0, 0.223214284, 0)
+backward.Size = UDim2.new(0, 88, 0, 24)
+backward.Font = Enum.Font.SourceSans
+backward.Text = "Backward"
+backward.TextColor3 = Color3.fromRGB(255, 255, 255)
+backward.TextSize = 16.000
+
+UICorner_5.Parent = backward
+
+UICorner_6.Parent = Frame
+
+TextButton.Name = ">"
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(7, 56, 0)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(-0.795882881, 0, 0.44392857, 0)
+TextButton.Size = UDim2.new(0, 43, 0, 33)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ">"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 18.000
+
+UICorner_7.Parent = TextButton
+
+TextButton_2.Name = "<"
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(7, 56, 0)
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(-1.57770109, 0, 0.44392857, 0)
+TextButton_2.Size = UDim2.new(0, 43, 0, 33)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "<"
+TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.TextSize = 18.000
+
+UICorner_8.Parent = TextButton_2
+
+-- Scripts:
+
+local function QQDIQA_fake_script() -- Up.LocalScript 
+	local script = Instance.new('LocalScript', Up)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+	script.Parent.Activated:Connect(function()
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(0, 0,-3))
+	end)
+end
+coroutine.wrap(QQDIQA_fake_script)()
+local function EXPD_fake_script() -- Down.LocalScript 
+	local script = Instance.new('LocalScript', Down)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+	script.Parent.Activated:Connect(function()
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(0, 0, 3))
+	end)
+end
+coroutine.wrap(EXPD_fake_script)()
+local function DAGJAD_fake_script() -- activate.LocalScript 
+	local script = Instance.new('LocalScript', activate)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+	
+	script.Parent.Activated:Connect(function()
+		player.Humanoid.PlatformStand = true
+		wait(0.5)
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.Angles(90, 0, 0))
+		wait(0.5)
+		player.HumanoidRootPart.Massless = true
+	end)
+end
+coroutine.wrap(DAGJAD_fake_script)()
+local function ZVQTBCV_fake_script() -- forward.LocalScript 
+	local script = Instance.new('LocalScript', forward)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+	script.Parent.Activated:Connect(function()
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(0,-3,0))
+	end)
+end
+coroutine.wrap(ZVQTBCV_fake_script)()
+local function RWJM_fake_script() -- backward.LocalScript 
+	local script = Instance.new('LocalScript', backward)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+	script.Parent.Activated:Connect(function()
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(0,3,0))
+	end)
+end
+coroutine.wrap(RWJM_fake_script)()
+local function HMMXNGK_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+	script.Parent.Activated:Connect(function()
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(3, 0, 0))
+	end)
+end
+coroutine.wrap(HMMXNGK_fake_script)()
+local function DFSPB_fake_script() -- TextButton_2.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_2)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+	script.Parent.Activated:Connect(function()
+		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.new(-3, 0, 0))
+	end)
+end
+coroutine.wrap(DFSPB_fake_script)()
