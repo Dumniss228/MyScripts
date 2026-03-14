@@ -1,1 +1,80 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ON = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local OFF = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(66, 66, 66)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.441176474, 0, -2.31161885e-05, 0)
+Frame.Size = UDim2.new(0, 123, 0, 53)
+
+ON.Name = "ON"
+ON.Parent = Frame
+ON.BackgroundColor3 = Color3.fromRGB(0, 79, 0)
+ON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ON.BorderSizePixel = 0
+ON.Position = UDim2.new(0.0370370373, 0, 0.137931034, 0)
+ON.Size = UDim2.new(0, 50, 0, 41)
+ON.Font = Enum.Font.SourceSans
+ON.Text = "ON"
+ON.TextColor3 = Color3.fromRGB(254, 254, 254)
+ON.TextSize = 14.000
+
+UICorner.Parent = ON
+
+OFF.Name = "OFF"
+OFF.Parent = Frame
+OFF.BackgroundColor3 = Color3.fromRGB(94, 0, 2)
+OFF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OFF.BorderSizePixel = 0
+OFF.Position = UDim2.new(0.524290979, 0, 0.137931034, 0)
+OFF.Size = UDim2.new(0, 50, 0, 41)
+OFF.Font = Enum.Font.SourceSans
+OFF.Text = "OFF"
+OFF.TextColor3 = Color3.fromRGB(255, 255, 255)
+OFF.TextSize = 14.000
+
+UICorner_2.Parent = OFF
+
+UICorner_3.Parent = Frame
+
+-- Scripts:
+
+local function VNZQK_fake_script() -- ON.LocalScript 
+	local script = Instance.new('LocalScript', ON)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+
+	script.Parent.Activated:Connect(function()
+		player.Humanoid.PlatformStand = true
+		wait(0.5)
+		player:PivotTo(player:GetPivot() * CFrame.Angles(90, 0, 0))
+	end)
+end
+coroutine.wrap(VNZQK_fake_script)()
+local function YQBPQE_fake_script() -- OFF.LocalScript 
+	local script = Instance.new('LocalScript', OFF)
+
+	local player = game.Workspace.Dunimo113 --ur usname
+
+	script.Parent.Activated:Connect(function()
+		player.Humanoid.PlatformStand = false
+	end)
+end
+coroutine.wrap(YQBPQE_fake_script)()
 
