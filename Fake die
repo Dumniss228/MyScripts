@@ -20,7 +20,7 @@ Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(66, 66, 66)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.441176474, 0, -2.31161885e-05, 0)
+Frame.Position = UDim2.new(0.441176474, 0, 0.440157473, 0)
 Frame.Size = UDim2.new(0, 123, 0, 53)
 
 ON.Name = "ON"
@@ -28,12 +28,12 @@ ON.Parent = Frame
 ON.BackgroundColor3 = Color3.fromRGB(0, 79, 0)
 ON.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ON.BorderSizePixel = 0
-ON.Position = UDim2.new(0.0370370373, 0, 0.137931034, 0)
+ON.Position = UDim2.new(0.0614271723, 0, 0.137931034, 0)
 ON.Size = UDim2.new(0, 50, 0, 41)
 ON.Font = Enum.Font.SourceSans
 ON.Text = "ON"
 ON.TextColor3 = Color3.fromRGB(254, 254, 254)
-ON.TextSize = 14.000
+ON.TextSize = 23.000
 
 UICorner.Parent = ON
 
@@ -47,7 +47,7 @@ OFF.Size = UDim2.new(0, 50, 0, 41)
 OFF.Font = Enum.Font.SourceSans
 OFF.Text = "OFF"
 OFF.TextColor3 = Color3.fromRGB(255, 255, 255)
-OFF.TextSize = 14.000
+OFF.TextSize = 23.000
 
 UICorner_2.Parent = OFF
 
@@ -55,26 +55,58 @@ UICorner_3.Parent = Frame
 
 -- Scripts:
 
-local function VNZQK_fake_script() -- ON.LocalScript 
+local function TMPR_fake_script() -- ON.LocalScript 
 	local script = Instance.new('LocalScript', ON)
 
 	local player = game.Workspace.Dunimo113 --ur usname
-
+	
 	script.Parent.Activated:Connect(function()
 		player.Humanoid.PlatformStand = true
 		wait(0.5)
 		player:PivotTo(player:GetPivot() * CFrame.Angles(90, 0, 0))
 	end)
+	
 end
-coroutine.wrap(VNZQK_fake_script)()
-local function YQBPQE_fake_script() -- OFF.LocalScript 
+coroutine.wrap(TMPR_fake_script)()
+local function DJWV_fake_script() -- OFF.LocalScript 
 	local script = Instance.new('LocalScript', OFF)
 
 	local player = game.Workspace.Dunimo113 --ur usname
-
+	
 	script.Parent.Activated:Connect(function()
 		player.Humanoid.PlatformStand = false
 	end)
 end
-coroutine.wrap(YQBPQE_fake_script)()
+coroutine.wrap(DJWV_fake_script)()
+local function NDDDBT_fake_script() -- Frame.drag script 
+	local script = Instance.new('LocalScript', Frame)
 
+	local UIS = game:GetService("UserInputService")
+	
+	local frame = script.Parent
+	local dragging = false
+	local dragStart = nil
+	local startPos = nil
+	
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+		end
+	end)
+	
+	frame.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = false
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			local delta = input.Position - dragStart
+			frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+	end)
+end
+coroutine.wrap(NDDDBT_fake_script)()
