@@ -33,7 +33,7 @@ local UICorner_11 = Instance.new("UICorner")
 local Sit = Instance.new("TextButton")
 local UICorner_12 = Instance.new("UICorner")
 local FakeDIE = Instance.new("TextLabel")
-local local = Instance.new("TextLabel")
+local localTitle = Instance.new("TextLabel")
 local LoaderFE = Instance.new("TextButton")
 local UICorner_13 = Instance.new("UICorner")
 local localscript2 = Instance.new("TextButton")
@@ -274,19 +274,19 @@ FakeDIE.TextColor3 = Color3.fromRGB(255, 255, 255)
 FakeDIE.TextSize = 19.000
 FakeDIE.TextTransparency = 0.320
 
-local.Name = "local"
-local.Parent = Frame2
-local.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-local.BackgroundTransparency = 1.000
-local.BorderColor3 = Color3.fromRGB(0, 0, 0)
-local.BorderSizePixel = 0
-local.Position = UDim2.new(-0.0639064908, 0, -0.113101535, 0)
-local.Size = UDim2.new(0, 200, 0, 50)
-local.Font = Enum.Font.SourceSans
-local.Text = "Local"
-local.TextColor3 = Color3.fromRGB(255, 255, 255)
-local.TextSize = 19.000
-local.TextTransparency = 0.320
+localTitle.Name = "localTitle"
+localTitle.Parent = Frame2
+localTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+localTitle.BackgroundTransparency = 1.000
+localTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+localTitle.BorderSizePixel = 0
+localTitle.Position = UDim2.new(-0.0639064908, 0, -0.113101535, 0)
+localTitle.Size = UDim2.new(0, 200, 0, 50)
+localTitle.Font = Enum.Font.SourceSans
+localTitle.Text = "Local"
+localTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+localTitle.TextSize = 19.000
+localTitle.TextTransparency = 0.320
 
 LoaderFE.Name = "Loader FE"
 LoaderFE.Parent = Frame2
@@ -319,7 +319,7 @@ UICorner_14.Parent = localscript2
 
 -- Scripts:
 
-local function KDWFXJ_fake_script() -- OPEN.open script 
+local function IKCXAUL_fake_script() -- OPEN.open script 
 	local script = Instance.new('LocalScript', OPEN)
 
 	script.Parent.Activated:Connect(function()
@@ -328,8 +328,8 @@ local function KDWFXJ_fake_script() -- OPEN.open script
 	end)
 	
 end
-coroutine.wrap(KDWFXJ_fake_script)()
-local function TMAMWF_fake_script() -- Found.FoundScript 
+coroutine.wrap(IKCXAUL_fake_script)()
+local function MIURZ_fake_script() -- Found.FoundScript 
 	local script = Instance.new('LocalScript', Found)
 
 	local textbox = script.Parent.Parent.TextBox
@@ -346,8 +346,8 @@ local function TMAMWF_fake_script() -- Found.FoundScript
 		end
 	end)
 end
-coroutine.wrap(TMAMWF_fake_script)()
-local function JWVR_fake_script() -- TP.tp 
+coroutine.wrap(MIURZ_fake_script)()
+local function SLEYLS_fake_script() -- TP.tp 
 	local script = Instance.new('LocalScript', TP)
 
 	local player = game.Players.LocalPlayer
@@ -360,8 +360,8 @@ local function JWVR_fake_script() -- TP.tp
 		end
 	end)
 end
-coroutine.wrap(JWVR_fake_script)()
-local function PNUFHYP_fake_script() -- Frame.dragging 
+coroutine.wrap(SLEYLS_fake_script)()
+local function UHWM_fake_script() -- Frame.dragging 
 	local script = Instance.new('LocalScript', Frame)
 
 	local UIS = game:GetService("UserInputService")
@@ -392,8 +392,8 @@ local function PNUFHYP_fake_script() -- Frame.dragging
 		end
 	end)
 end
-coroutine.wrap(PNUFHYP_fake_script)()
-local function YEVSSWY_fake_script() -- Close.close script 
+coroutine.wrap(UHWM_fake_script)()
+local function OHISOH_fake_script() -- Close.close script 
 	local script = Instance.new('LocalScript', Close)
 
 	script.Parent.Activated:Connect(function()
@@ -403,8 +403,8 @@ local function YEVSSWY_fake_script() -- Close.close script
 	
 	
 end
-coroutine.wrap(YEVSSWY_fake_script)()
-local function NBQJRS_fake_script() -- localscript.LocalScript 
+coroutine.wrap(OHISOH_fake_script)()
+local function QMYRMKZ_fake_script() -- localscript.LocalScript 
 	local script = Instance.new('LocalScript', localscript)
 
 	script.Parent.Activated:Connect(function()
@@ -413,8 +413,8 @@ local function NBQJRS_fake_script() -- localscript.LocalScript
 		script.Parent.Parent.localscript2.Visible = true
 	end)
 end
-coroutine.wrap(NBQJRS_fake_script)()
-local function RIOZB_fake_script() -- FaleDieON.LocalScript 
+coroutine.wrap(QMYRMKZ_fake_script)()
+local function NWKVNZG_fake_script() -- FaleDieON.LocalScript 
 	local script = Instance.new('LocalScript', FaleDieON)
 
 	local player = game.Players.LocalPlayer.Character
@@ -424,8 +424,8 @@ local function RIOZB_fake_script() -- FaleDieON.LocalScript
 		player.HumanoidRootPart:PivotTo(player:GetPivot() * CFrame.Angles(90, 0, 0))
 	end)
 end
-coroutine.wrap(RIOZB_fake_script)()
-local function OPPBH_fake_script() -- FaleDieOFF.LocalScript 
+coroutine.wrap(NWKVNZG_fake_script)()
+local function XWYQPC_fake_script() -- FaleDieOFF.LocalScript 
 	local script = Instance.new('LocalScript', FaleDieOFF)
 
 	local player = game.Players.LocalPlayer.Character
@@ -433,8 +433,8 @@ local function OPPBH_fake_script() -- FaleDieOFF.LocalScript
 	player.Humanoid.PlatformStand = false
 	end)
 end
-coroutine.wrap(OPPBH_fake_script)()
-local function QHQJZ_fake_script() -- Sit.LocalScript 
+coroutine.wrap(XWYQPC_fake_script)()
+local function KYIPV_fake_script() -- Sit.LocalScript 
 	local script = Instance.new('LocalScript', Sit)
 
 	local player = game.Players.LocalPlayer.Character
@@ -442,8 +442,8 @@ local function QHQJZ_fake_script() -- Sit.LocalScript
 	player.Humanoid.Sit = true
 	end)
 end
-coroutine.wrap(QHQJZ_fake_script)()
-local function IONMRO_fake_script() -- LoaderFE.LocalScript 
+coroutine.wrap(KYIPV_fake_script)()
+local function CENAZ_fake_script() -- LoaderFE.LocalScript 
 	local script = Instance.new('LocalScript', LoaderFE)
 
 	script.Parent.Activated:Connect(function()
@@ -654,8 +654,8 @@ local function IONMRO_fake_script() -- LoaderFE.LocalScript
 		coroutine.wrap(DFSPB_fake_script)()
 	end)
 end
-coroutine.wrap(IONMRO_fake_script)()
-local function QAEL_fake_script() -- localscript2.LocalScript 
+coroutine.wrap(CENAZ_fake_script)()
+local function TOXIYW_fake_script() -- localscript2.LocalScript 
 	local script = Instance.new('LocalScript', localscript2)
 
 	script.Parent.Activated:Connect(function()
@@ -664,4 +664,4 @@ local function QAEL_fake_script() -- localscript2.LocalScript
 		script.Parent.Parent.localscript2.Visible = false
 	end)
 end
-coroutine.wrap(QAEL_fake_script)()
+coroutine.wrap(TOXIYW_fake_script)()
