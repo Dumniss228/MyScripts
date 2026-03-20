@@ -1,0 +1,145 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ON = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local OFF = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(77, 77, 77)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.397948712, 0, 0.383219957, 0)
+Frame.Size = UDim2.new(0, 200, 0, 116)
+
+ON.Name = "ON"
+ON.Parent = Frame
+ON.BackgroundColor3 = Color3.fromRGB(6, 83, 0)
+ON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ON.BorderSizePixel = 0
+ON.Position = UDim2.new(0.0497237146, 0, 0.2261976, 0)
+ON.Size = UDim2.new(0, 84, 0, 82)
+ON.Font = Enum.Font.SourceSans
+ON.Text = "ON"
+ON.TextColor3 = Color3.fromRGB(255, 255, 255)
+ON.TextSize = 54.000
+
+UICorner.Parent = ON
+
+OFF.Name = "OFF"
+OFF.Parent = Frame
+OFF.BackgroundColor3 = Color3.fromRGB(83, 0, 1)
+OFF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OFF.BorderSizePixel = 0
+OFF.Position = UDim2.new(0.530886531, 0, 0.2261976, 0)
+OFF.Size = UDim2.new(0, 84, 0, 82)
+OFF.Font = Enum.Font.SourceSans
+OFF.Text = "OFF"
+OFF.TextColor3 = Color3.fromRGB(255, 255, 255)
+OFF.TextSize = 54.000
+
+UICorner_2.Parent = OFF
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 200, 0, 26)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Fake Die"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 27.000
+TextLabel.TextTransparency = 0.340
+TextLabel.TextWrapped = true
+
+UICorner_3.Parent = Frame
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.465000004, 0, 0.844827592, 0)
+TextLabel_2.Rotation = -17.000
+TextLabel_2.Size = UDim2.new(0, 200, 0, 26)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "By Dunimo113"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 20.000
+TextLabel_2.TextTransparency = 0.340
+TextLabel_2.TextWrapped = true
+
+-- Scripts:
+
+local function YUKLL_fake_script() -- ON.LocalScript 
+	local script = Instance.new('LocalScript', ON)
+
+	local gyro = Instance.new("BodyGyro")
+	script.Parent.Activated:Connect(function()
+		local player = game.Players.LocalPlayer.Character
+		local playerPos = player.HumanoidRootPart.CFrame
+		local offset = CFrame.Angles(math.rad(90), 0, 0)
+		player.Humanoid.PlatformStand = true
+		wait(2)
+		gyro.Parent = player.HumanoidRootPart
+		gyro.CFrame = playerPos * offset
+	end)
+end
+coroutine.wrap(YUKLL_fake_script)()
+local function MDIOPNI_fake_script() -- OFF.LocalScript 
+	local script = Instance.new('LocalScript', OFF)
+
+	script.Parent.Activated:Connect(function()
+		local player = game.Players.LocalPlayer.Character
+		local gyro = player.HumanoidRootPart.BodyGyro
+		player.Humanoid.PlatformStand = false
+		gyro.CFrame = CFrame.Angles(0, 0, 0)
+	end)
+end
+coroutine.wrap(MDIOPNI_fake_script)()
+local function CBZZEMJ_fake_script() -- Frame.dragging 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UIS = game:GetService("UserInputService")
+	
+	local frame = script.Parent
+	local dragging = false
+	local dragStart = nil
+	local startPos = nil
+	
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+		end
+	end)
+	
+	frame.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = false
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			local delta = input.Position - dragStart
+			frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+	end)
+end
+coroutine.wrap(CBZZEMJ_fake_script)()
