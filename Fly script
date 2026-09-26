@@ -1,0 +1,153 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ON = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local OFF = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+Frame.BackgroundTransparency = 0.300
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.57995224, 0, 0.457661301, 0)
+Frame.Size = UDim2.new(0, 136, 0, 87)
+
+ON.Name = "ON"
+ON.Parent = Frame
+ON.BackgroundColor3 = Color3.fromRGB(2, 106, 0)
+ON.BackgroundTransparency = 0.450
+ON.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ON.BorderSizePixel = 0
+ON.Position = UDim2.new(0.0588235296, 0, 0.137931034, 0)
+ON.Size = UDim2.new(0, 56, 0, 64)
+ON.Font = Enum.Font.SourceSans
+ON.Text = "ON"
+ON.TextColor3 = Color3.fromRGB(255, 255, 255)
+ON.TextSize = 50.000
+
+UICorner.Parent = ON
+
+OFF.Name = "OFF"
+OFF.Parent = Frame
+OFF.BackgroundColor3 = Color3.fromRGB(106, 0, 2)
+OFF.BackgroundTransparency = 0.450
+OFF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OFF.BorderSizePixel = 0
+OFF.Position = UDim2.new(0.536764681, 0, 0.137931034, 0)
+OFF.Size = UDim2.new(0, 56, 0, 64)
+OFF.Font = Enum.Font.SourceSans
+OFF.Text = "OFF"
+OFF.TextColor3 = Color3.fromRGB(255, 255, 255)
+OFF.TextSize = 42.000
+
+UICorner_2.Parent = OFF
+
+UICorner_3.Parent = Frame
+
+-- Scripts:
+
+local function HAZXTWY_fake_script() -- ON.LocalScript 
+	local script = Instance.new('LocalScript', ON)
+
+	script.Parent.Activated:Connect(function()
+	
+	local rootpart = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local linear = Instance.new("LinearVelocity")
+	local gyro = Instance.new("BodyGyro")
+	local attachment = Instance.new("Attachment")
+	local offset = CFrame.Angles(math.rad(90), 0, 0)
+	local playerpos = rootpart.CFrame
+	---
+	linear.Parent = rootpart
+	gyro.Parent = rootpart
+	attachment.Parent = rootpart
+	rootpart.Parent.Humanoid.PlatformStand = true
+	---
+	linear.Attachment0 = attachment
+	linear.MaxForce = 10000
+	linear.VectorVelocity = Vector3.new(0, 10, 0)
+	task.wait()
+	gyro.CFrame = playerpos * offset
+	
+	wait(1.5)
+	
+	linear.VectorVelocity = Vector3.new(0, 0, 0)
+	
+	end)
+end
+coroutine.wrap(HAZXTWY_fake_script)()
+local function BSPWZG_fake_script() -- OFF.LocalScript 
+	local script = Instance.new('LocalScript', OFF)
+
+	script.Parent.Activated:Connect(function()
+		---
+	local rootpart = game.Players.LocalPlayer.Character.HumanoidRootPart
+	    ---
+	rootpart.Parent.Humanoid.PlatformStand = false
+		rootpart.BodyGyro:Destroy()
+		rootpart.Attachment:Destroy()
+		rootpart.LinearVelocity:Destroy()
+	end)
+end
+coroutine.wrap(BSPWZG_fake_script)()
+local function BGOKSX_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local guiObject = script.Parent -- Сам элемент (например, Frame)
+	
+	local dragging = false
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		guiObject.Position = UDim2.new(
+			startPos.X.Scale, 
+			startPos.X.Offset + delta.X, 
+			startPos.Y.Scale, 
+			startPos.Y.Offset + delta.Y
+		)
+	end
+	
+	guiObject.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = guiObject.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	guiObject.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(BGOKSX_fake_script)()
